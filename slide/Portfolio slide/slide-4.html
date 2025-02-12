@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .slider-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(0, 0, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slider-container {
+      max-width: 100%;
+      max-height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+    }
+
+    .slide img {
+      /* Center and shrink to fit */
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+
+    .close-btn,
+    .nav-btn {
+      position: absolute;
+      font-size: 20px;
+      cursor: pointer;
+      color: #fff;
+      z-index: 1;
+    }
+
+    .close-btn {
+      top: 10px;
+      right: 10px;
+    }
+
+    .prev-btn {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+    }
+
+    .next-btn {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+
+<div class="slider-overlay">
+  <div class="slider-container">
+    <span class="close-btn" onclick="closeSlider()">✖</span>
+    <div class="slides">
+		<div class="slide"><img src="../../Portfolio/images/slide/Architecture-Residential-Modern-Multi-Story-Urban-Living-Exterior-View-Apartment-Complex-Architectur-bd-bangladesh-hh22 copy.jpg" alt="Image 4"></div>
+      <div class="slide"><img src="../../Portfolio/images/slide/Architecture-Residential-Modern-Multi-Story-Urban-Living-Exterior-View-Apartment-Complex-Architectur-bd-bangladesh-as11 copy.jpg" alt="Image 5"></div>
+      <div class="slide"><img src="../../Portfolio/images/slide/commercial-brick-complex-landscap-archdaily-modern-commercial-laxury-bangladesh-rajshahi-dhaka-future-hospital-architecture-famous-bd-bangladesh-architecture-shoppingmall copy.jpg" alt="Image 6"></div>
+		<div class="slide"><img src="../../Portfolio/images/slide/Architecture-Residential-Modern-Multi-Story-Urban-Living-Exterior-View-Apartment-Complex-Architectur-bd-bangladesh-jalal copy.jpg" alt="Image 7"></div>
+      <div class="slide"><img src="../../Portfolio/images/slide/Mosque-Architecture-Islamic Art-Minaret-Religious Building-VR-Animation-Cultural Heritage-Architectural Visualization copy.jpg" alt="Image 8"></div>
+		<div class="slide"><img src="../../Portfolio/images/slide/commercial-brick-complex-landscap-archdaily-modern-commercial-laxury-bangladesh-rajshahi-dhaka-future-hospital-architecture-famous-bd-bangladesh-architecture-shoppingmall-btcl copy.jpg" alt="Image 9"></div>
+      <div class="slide"><img src="../../Portfolio/images/slide/Architecture-Residential-Modern-Multi-Story-Urban-Living-Exterior-View-Apartment-Complex-Architectur-bd-bangladesh-hh22 sam-land-pp copy.jpg" alt="Image 10"></div>
+      <div class="slide"><img src="../../Portfolio/images/slide/Architecture-Residential-Modern-Multi-Story-Urban-Living-Exterior-View-Apartment-Complex-Architectur-bd-bangladesh-sal copy.jpg" alt="Image 11"></div>
+		<div class="slide"><img src="../../Portfolio/images/slide/Architecture-Residential-Modern-Multi-Story-Urban-Living-Exterior-View-Apartment-Complex-Architectur-bd-bangladesh-maj-11 copy.jpg" alt="Image 12"></div>
+      <div class="slide"><img src="../../Portfolio/images/slide/Architectural-Visualization-Government-School-Modern-Building-Concrete-Brick-Structure-Educational-Institution-Urban-Architecture-Sustainable-Design-Photorealistic-Render copy1.jpg" alt="Image 13"></div>
+      <div class="slide"><img src="../../Portfolio/images/slide/commercial-brick-complex-landscap-archdaily-modern-commercial-laxury-bangladesh-rajshahi-dhaka-future-hospital-architecture-famous-bd-bangladesh-architecture-shoppingmall-Showroom copy.jpg" alt="Image 14"></div>
+		<div class="slide"><img src="../../Portfolio/images/slide/Architecture-Residential-Modern-Multi-Story-Urban-Living-Exterior-View-Apartment-Complex-Architectur-bd-bangladesh-v4-1 copy.jpg" alt="Image 15"></div>
+      <div class="slide"><img src="../../Portfolio/images/slide/commercial-brick-complex-landscap-archdaily-modern-commercial-laxury-bangladesh-rajshahi-dhaka-future-hospital-architecture-famous-bd-bangladesh-architecture-mosque-Arab-Islam copy.jpg" alt="Image 16"></div>
+		<div class="slide"><img src="../../Portfolio/images/slide/Architecture-Residential-Modern-Multi-Story-Urban-Living-Exterior-View-Apartment-Complex-Architectur-bd-bangladesh-vt3-123 copy.jpg" alt="Image 17"></div>
+		<div class="slide"><img src="../../Portfolio/images/slide/Architecture-Residential-Modern-Multi-Story-Urban-Living-Exterior-View-Apartment-Complex-Architectur-bd-bangladesh-sm11 copy.jpg" alt="Image 18"></div>
+      <div class="slide"><img src="../../Portfolio/images/slide/Architecture-Residential-Modern-Multi-Story-Urban-Living-Exterior-View-Apartment-Complex-Architectur-bd-bangladesh-emdad 11 copy.jpg" alt="Image 19"></div>
+      <div class="slide"><img src="../../Portfolio/images/slide/dental-medical-modern-commercial-laxury-bangladesh-rajshahi-dhaka-future-hospital-architecture-famous-bd-bangladesh-architecture-udayan copy.jpg" alt="Image 1"></div>
+      <div class="slide"><img src="../../Portfolio/images/slide/Architecture-Residential-Modern-Multi-Story-Urban-Living-Exterior-View-Apartment-Complex-laxury-Architectur-bd-bangladesh-dmr22 copy.jpg" alt="Image 2"></div>
+      <div class="slide"><img src="../../Portfolio/images/slide/Architecture-Residential-Modern-Multi-Story-Urban-Living-Exterior-View-Apartment-Complex-laxury-Architectur-bd-bangladesh-dmr-sneho22 copy.jpg" alt="Image 3"></div>
+      <!-- Add more slides as needed -->
+    </div>
+    <span class="nav-btn prev-btn" onclick="prevSlide()">❮</span>
+    <span class="nav-btn next-btn" onclick="nextSlide()">❯</span>
+  </div>
+</div>
+
+<script>
+  let slideIndex = 0;
+
+  function showSlide(index) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    if (index >= totalSlides) {
+      slideIndex = 0;
+    } else if (index < 0) {
+      slideIndex = totalSlides - 1;
+    } else {
+      slideIndex = index;
+    }
+
+    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+  }
+
+  function prevSlide() {
+    showSlide(slideIndex - 1);
+  }
+
+  function nextSlide() {
+    showSlide(slideIndex + 1);
+  }
+
+  function closeSlider() {
+    const sliderOverlay = document.querySelector('.slider-overlay');
+    sliderOverlay.style.display = 'none';
+    history.back(); // Go back to the previous window
+  }
+
+  // Adjust slide size on window resize
+  window.addEventListener('resize', function() {
+    const slides = document.querySelectorAll('.slide');
+    const maxWidth = Math.min(window.innerWidth, 1920);
+    const maxHeight = Math.min(window.innerHeight, 1080);
+    slides.forEach(slide => {
+      slide.style.width = `${maxWidth}px`;
+      slide.style.maxHeight = `${maxHeight}px`;
+    });
+    showSlide(slideIndex);
+  });
+
+  // Initialize slide size
+  window.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    const maxWidth = Math.min(window.innerWidth, 1920);
+    const maxHeight = Math.min(window.innerHeight, 1080);
+    slides.forEach(slide => {
+      slide.style.width = `${maxWidth}px`;
+      slide.style.maxHeight = `${maxHeight}px`;
+    });
+  });
+</script>
+
+</body>
+</html>

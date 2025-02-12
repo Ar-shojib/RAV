@@ -1,0 +1,83 @@
+.subscription-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.subscription-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+}
+
+.form-group input[type="email"] {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #333;
+  background: transparent;
+  color: #fff;
+}
+
+.form-group input[type="email"].invalid {
+  border-color: #f44336;
+  box-shadow: 0 0 0 2px rgba(244,67,54,0.2);
+}
+
+.form-group input[type="email"].valid {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76,175,80,0.2);
+}
+
+.subscribe-btn {
+  padding: 12px 24px;
+  background: #fff;
+  color: #1B1B1B;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subscribe-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+.form-message {
+  margin-top: 10px;
+  min-height: 20px;
+  transition: all 0.3s ease;
+  transform-origin: top;
+}
+
+.form-message.success {
+  color: #4CAF50;
+}
+
+.form-message.error {
+  color: #f44336;
+}
+
+.form-message.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Add loading spinner animation */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
